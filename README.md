@@ -5,9 +5,12 @@ Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
 DITEN - UniversitÃ degli Studi di Genova, Genoa I-16145, Italy.
 activityrecognition '@'smartlab.ws
-www.smartlab.ws 
+www.smartlab.ws
+# The Five Steps
+The documentation below is also found dispersed at the appropriate places in the
+code as well.
 *******************************************************************************
-# Beginning Step 1. Merges the training and the test sets to create one data set
+ Beginning Step 1. Merges the training and the test sets to create one data set
 *******************************************************************************
  Read in test data from the Working Directory
  Make sure of the dimensions
@@ -52,8 +55,8 @@ Repeat the above steps for the training data
 Add the column names to the dataframe
 
 *******************************************************************************
-# End of Step 1. Merges the training and the test sets to create one data set.
+ End of Step 1. Merges the training and the test sets to create one data set.
 *******************************************************************************
-# Beginning of Step 2 . Extracts only the measurements on the mean and standard 
-#                       deviation for each measurement.
-#*******************************************************************************
+ Beginning of Step 2 . Extracts only the measurements on the mean and standard 
+                       deviation for each measurement.
+*******************************************************************************
