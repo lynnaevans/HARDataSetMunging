@@ -106,8 +106,16 @@ combined.data.meansandstddevs[,2]<-
 # Beginning of Step 4. Appropriately labels the data set with descriptive 
 #                      variable names. 
 #*******************************************************************************
-# Since there are no further specifications regarding the use of the variables
-# in this dataframe I am happy to use the exising labels.  They are descriptive.
+# Remove the parentheses
+newnames<-names(combined.data.meansandstddevs)
+newnames<-gsub("\\(","", newnames)
+newnames<-gsub("\\)","", newnames)
+#Replace the dash with an underscore
+newnames<-gsub("\\-","_", newnames)
+#Replace commas with an underscore
+newnames<-gsub("\\,","_", newnames)
+#Replace names
+names(combined.data.meansandstddevs)<-newnames
 #*******************************************************************************
 # End of Step 4. Appropriately labels the data set with descriptive variable 
 #                names.            
