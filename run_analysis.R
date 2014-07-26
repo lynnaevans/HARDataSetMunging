@@ -106,7 +106,8 @@ combined.data.meansandstddevs[,2]<-
 # Beginning of Step 4. Appropriately labels the data set with descriptive 
 #                      variable names. 
 #*******************************************************************************
-
+# Since there are no further specifications regarding the use of the variables
+# in this dataframe I am happy to use the exising labels.  They are descriptive.
 #*******************************************************************************
 # End of Step 4. Appropriately labels the data set with descriptive variable 
 #                names.            
@@ -117,6 +118,10 @@ combined.data.meansandstddevs[,2]<-
 #*******************************************************************************
 # Use the aggregate function to create a dataframe with the means and std dev 
 # for each of the subject's activities.  Export it with a write.table.
+tidydata<- aggregate(x=combined.data.meansandstddevs[,3:68], 
+                     by=list(combined.data.meansandstddevs$Subject, 
+                             combined.data.meansandstddevs$Activity),FUN=mean)
+write.csv(tidydata, file = "tidydata.txt")
 #*******************************************************************************
 # End of Step 5. Creates a second, independent tidy data set with the average of 
 #                each variable for each activity and each subject.
