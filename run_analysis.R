@@ -70,7 +70,20 @@ names(combined.data)<-new.column.names[,1]
 # Beginning of Step 2 . Extracts only the measurements on the mean and standard 
 #                       deviation for each measurement.
 #*******************************************************************************
-
+# Construct a character vector of column names to keep
+Keepers <- c("Subject", "Activity")
+# Now look over theColumnNames for those containg either "std" or "mean" to add
+# to Keepers   Keepers <- c(Keepers, "Keepit")
+for (i in 1:561){
+        doit <- regexpr("mean", theColumnNames[i,1])
+        doit2 <- regexpr("meanFreq", theColumnNames[i,1])
+        if (doit > 0 & doit2 < 0) {
+                Keepers <- c(Keepers, as.character(theColumnNames[i,1]))
+        }        
+        doit <- regexpr("std", theColumnNames[i,1])
+        if (doit > 0) Keepers <- c(Keepers, as.character(theColumnNames[i,1]))
+}
+combined.data.meansandstddevs <- combined.data[Keepers]
 #*******************************************************************************
 # End of Step 2 . Extracts only the measurements on the mean and standard 
 #                 deviation for each measurement.
@@ -78,7 +91,14 @@ names(combined.data)<-new.column.names[,1]
 # Beginning of Step 3. Uses descriptive activity names to name the activities in
 #                      the data set        
 #*******************************************************************************
-
+# Convert the activity column into a factor using the labels provided in
+# activity_labels.txt
+combined.data.meansandstddevs[,2]<-
+        as.character(combined.data.meansandstddevs[,2])
+combined.data.meansandstddevs[,2]<- 
+        factor(combined.data.meansandstddevs[,2], 
+               labels = c( "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", 
+                           "SITTING", "STANDING", "LAYING"))
 #*******************************************************************************
 # End of Step 3. Uses descriptive activity names to name the activities in
 #                      the data set        
@@ -95,7 +115,8 @@ names(combined.data)<-new.column.names[,1]
 #                      average of each variable for each activity and each 
 #                      subject.
 #*******************************************************************************
-
+# Use the aggregate function to create a dataframe with the means and std dev 
+# for each of the subject's activities.  Export it with a write.table.
 #*******************************************************************************
 # End of Step 5. Creates a second, independent tidy data set with the average of 
 #                each variable for each activity and each subject.
