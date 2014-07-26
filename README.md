@@ -60,3 +60,49 @@ Add the column names to the dataframe
  Beginning of Step 2 . Extracts only the measurements on the mean and standard 
                        deviation for each measurement.
 *******************************************************************************
+ Construct a character vector of column names to keep
+
+Now look over theColumnNames for those containg either "std" or "mean" to add
+    to Keepers
+    
+Using the column names (Keepers) generate a data frame with just the subject,
+activity, standard deviations and means columns 
+
+*******************************************************************************
+ End of Step 2 . Extracts only the measurements on the mean and standard 
+                 deviation for each measurement.
+*******************************************************************************
+ Beginning of Step 3. Uses descriptive activity names to name the activities in
+                      the data set        
+*******************************************************************************
+ Convert the activity column into a factor using the labels provided in
+ activity_labels.txt
+*******************************************************************************
+ End of Step 3. Uses descriptive activity names to name the activities in
+                      the data set        
+*******************************************************************************
+ Beginning of Step 4. Appropriately labels the data set with descriptive 
+                      variable names. 
+*******************************************************************************
+ Remove the parentheses
+ 
+ Replace the dash with an underscore
+ 
+ Replace commas with an underscore
+
+ Replace column names
+
+*******************************************************************************
+ End of Step 4. Appropriately labels the data set with descriptive variable 
+                names.            
+*******************************************************************************
+ Beginning of Step 5. Creates a second, independent tidy data set with the 
+                      average of each variable for each activity and each 
+                      subject.
+*******************************************************************************
+ Use the aggregate function to create a dataframe with the means and std dev 
+ for each of the subject's activities.  Export it with a write.table.
+*******************************************************************************
+ End of Step 5. Creates a second, independent tidy data set with the average of 
+                each variable for each activity and each subject.
+*******************************************************************************

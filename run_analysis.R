@@ -95,6 +95,9 @@ for (i in 1:561){
         doit <- regexpr("std", theColumnNames[i,1])
         if (doit > 0) Keepers <- c(Keepers, as.character(theColumnNames[i,1]))
 }
+# Using the column names (Keepers) generate a data frame with just the subject,
+# activity, standard deviations and means columns 
+
 combined.data.meansandstddevs <- combined.data[Keepers]
 #*******************************************************************************
 # End of Step 2 . Extracts only the measurements on the mean and standard 
