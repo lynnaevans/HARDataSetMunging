@@ -101,7 +101,11 @@ activity, standard deviations and means columns
                       subject.
 *******************************************************************************
  Use the aggregate function to create a dataframe with the means and std dev 
- for each of the subject's activities.  Export it with a write.table.
+ for each of the subject's activities.
+ 
+ Generates a 180 X 68 dataframe.
+ 
+ Export it with a write.table with headings.
 *******************************************************************************
  End of Step 5. Creates a second, independent tidy data set with the average of 
                 each variable for each activity and each subject.

@@ -144,6 +144,7 @@ names(combined.data.meansandstddevs)<-newnames
 tidydata<- aggregate(x=combined.data.meansandstddevs[,3:68], 
                      by=list(combined.data.meansandstddevs$Subject, 
                              combined.data.meansandstddevs$Activity),FUN=mean)
+dim(tidydata)
 write.csv(tidydata, file = "tidydata.txt")
 #*******************************************************************************
 # End of Step 5. Creates a second, independent tidy data set with the average of 
